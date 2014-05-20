@@ -1,0 +1,34 @@
+{
+  "name": "smart_foundation",
+  "version": "1.0.0",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "~0.4.4",
+    "grunt-bower-install": "^1.6.0",
+    "grunt-contrib-cssmin": "~0.9.0",
+    "grunt-contrib-imagemin": "~0.6.1",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-sass": "~0.7.3",
+    "grunt-contrib-uglify": "~0.4.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "load-grunt-tasks": "~0.4.0"
+  },
+  "description": "_s ===",
+  "main": "Gruntfile.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/smartmediaas/smart_foundation.git"
+  },
+  "keywords": [
+    "wordpress",
+    "underscores",
+    "foundation",
+    "wordpress-starter-theme"
+  ],
+  "author": "Smart Media",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/smartmediaas/smart_foundation/issues"
+  },
+  "homepage": "https://github.com/smartmediaas/smart_foundation"
+}
