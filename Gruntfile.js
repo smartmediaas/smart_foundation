@@ -36,18 +36,18 @@ module.exports = function(grunt) {
         },
 
         // autoprefixer
-        // autoprefixer: {
-        //     options: {
-        //         browsers: ['last 2 versions', 'ie 9', 'ios 6', 'android 4'],
-        //         map: true
-        //     },
-        //     files: {
-        //         expand: true,
-        //         flatten: true,
-        //         src: 'style.css',
-        //         dest: 'style.css'
-        //     },
-        // },
+        autoprefixer: {
+            options: {
+                browsers: ['last 2 versions', 'ie 9', 'ios 6', 'android 4'],
+                map: true
+            },
+            files: {
+                expand: true,
+                flatten: true,
+                src: 'style.css',
+                dest: 'style.css'
+            },
+        },
 
         // css minify
         cssmin: {
@@ -75,35 +75,35 @@ module.exports = function(grunt) {
         },
 
         // uglify to concat, minify, and make source maps
-        // uglify: {
-        //     plugins: {
-        //         options: {
-        //             sourceMap: 'assets/js/plugins.js.map',
-        //             sourceMappingURL: 'plugins.js.map',
-        //             sourceMapPrefix: 2
-        //         },
-        //         files: {
-        //             '/js/main.min.js': [
-        //                 'assets/js/source/plugins.js',
-        //                 'assets/js/vendor/navigation.js',
-        //                 'assets/js/vendor/skip-link-focus-fix.js',
-        //                 'assets/js/vendor/yourplugin/yourplugin.js',
-        //             ]
-        //         }
-        //     },
-        //     main: {
-        //         options: {
-        //             sourceMap: 'assets/js/main.js.map',
-        //             sourceMappingURL: 'main.js.map',
-        //             sourceMapPrefix: 2
-        //         },
-        //         files: {
-        //             'assets/js/main.min.js': [
-        //                 'assets/js/source/main.js'
-        //             ]
-        //         }
-        //     }
-        // },
+        uglify: {
+            plugins: {
+                options: {
+                    sourceMap: 'assets/js/plugins.js.map',
+                    sourceMappingURL: 'plugins.js.map',
+                    sourceMapPrefix: 2
+                },
+                files: {
+                    '/js/main.min.js': [
+                        'assets/js/source/plugins.js',
+                        'assets/js/vendor/navigation.js',
+                        'assets/js/vendor/skip-link-focus-fix.js',
+                        'assets/js/vendor/yourplugin/yourplugin.js',
+                    ]
+                }
+            },
+            main: {
+                options: {
+                    sourceMap: 'assets/js/main.js.map',
+                    sourceMappingURL: 'main.js.map',
+                    sourceMapPrefix: 2
+                },
+                files: {
+                    'assets/js/main.min.js': [
+                        'assets/js/source/main.js'
+                    ]
+                }
+            }
+        },
 
         // image optimization
         imagemin: {

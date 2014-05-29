@@ -1,8 +1,8 @@
 <?php
 /**
- * smart Custom post types and custom fields
+ * Custom post types and custom fields
  *
- * @package smart
+ * @package smart_foundation
  */
 
 

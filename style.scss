@@ -1,0 +1,128 @@
+/*
+Theme Name: smart_foundation
+Theme URI: https://smartmedia.no
+Author: Smart Media, Underscores.me, Foundation.zurb.com
+Author URI: http://smartmedia.no/
+Description: Description
+Version: 1.0
+License: GNU General Public License
+License URI: license.txt
+Text Domain: smart_foundation
+Domain Path: /languages/
+Tags:
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+ smart is based on Underscores http://underscores.me/, (C) 2012-2013 Automattic, Inc.
+
+Resetting and rebuilding styles have been helped along thanks to the fine work of
+Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
+along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+and Blueprint http://www.blueprintcss.org/
+*/
+
+// Bourbon Mixin Library
+// @import '/assets/bourbon';
+// Foundation normalize
+@import 'assets/foundation/scss/normalize';
+// Foundation functions
+@import 'assets/foundation/scss/foundation/functions';
+// Custom Mixins and Foundation modifiers
+@import 'mixins';
+// Foundation SCSS
+@import 'assets/foundation/scss/foundation'; // No CSS above this line, please. The universe might implode.
+// CSS Load Animations. For usage: https://github.com/jackilyn/animate.scss
+@import 'assets/animate-sass/animate';
+
+.admin-bar .top-bar{
+	margin-top: 32px;
+	@include breakpoint(medium-down){
+		margin-top: 46px;
+	}
+}
+
+/* =Fonts
+----------------------------------------------- */
+
+/* =Global
+----------------------------------------------- */
+
+/* =Menu
+----------------------------------------------- */
+.main-navigation {
+
+	ul {
+		list-style: none;
+		margin: 0;
+		padding-left: 0;
+
+		ul {
+			-moz-box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+            -webkit-box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+			background: #dddddd;
+			display: none;
+			float: left;
+			position: absolute;
+				top: 2em;
+				left: 0;
+			z-index: 99999;
+
+			ul {
+				left: 100%;
+				top: 0;
+			}
+			a {
+				width: 200px;
+			}
+			li {
+			}
+			:hover > a{
+			}
+			a:hover {
+			}
+		}
+		li:hover > ul {
+			display: block;
+		}
+	}
+	li {
+		float: left;
+		position: relative;
+
+		&:hover > a{
+
+		}
+	}
+	a {
+		display: block;
+		text-decoration: none;
+		padding: 0.5em 1em;
+	}
+	:hover > a,
+	.current_page_item > a,
+	.current-menu-item > a {
+	}
+}
+
+/* =Content
+----------------------------------------------- */
+
+/* =Asides
+----------------------------------------------- */
+
+
+
+/* =Footer
+----------------------------------------------- */
+
+
+
+/* =Widgets
+----------------------------------------------- */
+
+
+
+/* =Offcanvas
+----------------------------------------------- */

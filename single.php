@@ -7,14 +7,14 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
+	<div id="primary" <?php smart_layout(); ?>>
 		<main id="main" class="site-main" role="main">
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
 			<?php get_template_part( 'content', 'single' ); ?>
 
-			<?php smart_foundation_post_nav(); ?>
+			<?php smart_pagination(); ?>
 
 			<?php
 				// If comments are open or we have at least one comment, load up the comment template

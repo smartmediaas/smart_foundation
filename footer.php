@@ -10,14 +10,30 @@
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'smart_foundation' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'smart_foundation' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %1$s by %2$s.', 'smart_foundation' ), 'smart_foundation', '<a href="http://underscores.me/" rel="designer">Underscores.me</a>' ); ?>
+	<footer id="colophon" class="site-footer row" role="contentinfo">
+		<div class="site-info columns medium-12">
+			<?php do_action( 'smart_credits' ); ?>
+			<?php _e('Built on WordPress by', 'smart'); ?> <a href="http://smartmedia.no/" title="Smart Media" target="_blank">Smart Media AS</a>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
+
+<script>
+	jQuery(document).ready(function($) {
+		$(window).on('resize load', function() {
+			$(document).foundation({
+				topbar: {
+					sticky_class: "sticky-topbar",
+					custom_back_text: true,
+					back_text: "<?php _e('Back', 'smart'); ?>",
+					scrolltop: false,
+					mobile_show_parent_link: true,
+				},
+				// offcanvas: {},
+			});
+		});
+	});
+</script>
 
 <?php wp_footer(); ?>
 

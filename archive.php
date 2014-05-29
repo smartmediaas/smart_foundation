@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-	<section id="primary" class="content-area">
+	<section id="primary" <?php smart_layout(); ?>>
 		<main id="main" class="site-main" role="main">
 
 		<?php if ( have_posts() ) : ?>
@@ -85,12 +85,12 @@ get_header(); ?>
 					 * If you want to override this in a child theme, then include a file
 					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 					 */
-					get_template_part( 'content', get_post_format() );
+					get_template_part( 'list', 'posts' );
 				?>
 
 			<?php endwhile; ?>
 
-			<?php smart_foundation_paging_nav(); ?>
+			<?php smart_pagination(); ?>
 
 		<?php else : ?>
 

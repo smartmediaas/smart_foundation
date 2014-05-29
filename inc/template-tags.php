@@ -199,6 +199,7 @@ function smart_clear(){
 }
 endif;
 
+
 if ( ! function_exists( 'smart_foundation_post_nav' ) ) :
 /**
  * Display navigation to next/previous post when applicable.
@@ -247,7 +248,7 @@ function smart_foundation_posted_on() {
 			esc_url( get_permalink() ),
 			$time_string
 		),
-		sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s">%2$s</a></span>',
+		sprintf( '<span class="author"><a class="url fn n" href="%1$s">%2$s</a></span>',
 			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 			esc_html( get_the_author() )
 		)

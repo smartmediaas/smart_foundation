@@ -13,7 +13,7 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
+	<div id="primary" <?php smart_layout(); ?>>
 		<main id="main" class="site-main" role="main">
 
 		<?php if ( have_posts() ) : ?>
@@ -31,7 +31,7 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php smart_foundation_paging_nav(); ?>
+			<?php smart_pagination(); ?>
 
 		<?php else : ?>
 

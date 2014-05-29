@@ -1,0 +1,112 @@
+/* =Project mixins
+----------------------------------------------- */
+// breakpoint mixin
+// examples: 
+// @include breakpoint(small) { your css here }
+// @include breakpoint('max-width: 30em') { your css here }
+
+$break_small: "only screen and (max-width: 40.063em)";
+$break_medium-down: "only screen and (max-width:64.062em)";
+$break_medium: "only screen and (min-width:40.063em) and (max-width:64.062em)";
+$break_medium-up: "only screen and (min-width:40.063em)";
+$break_large-down: "only screen and (max-width:90.062em)";
+$break_large: "only screen and (min-width:64.063em) and (max-width:90.062em)";
+$break_large-up: "only screen and (min-width:64.063em)";
+$break_xlarge: "only screen and (min-width:90.063em)";
+$break_xxlarge: "only screen and (min-width:120.063em)";
+
+@mixin breakpoint($media) {
+  @if $media == small {
+    @media #{$break_small} { @content; }
+  }
+  @else if $media == medium-down {
+    @media #{$break_medium-down} { @content; }
+  }
+  @else if $media == medium {
+    @media #{$break_medium} { @content; }
+  }
+  @else if $media == medium-up {
+    @media #{$break_medium-up} { @content; }
+  }
+  @else if $media == large-down {
+    @media #{$break_large-down} { @content; }
+  }
+  @else if $media == large {
+    @media #{$break_large} { @content; }
+  }
+  @else if $media == large-up {
+    @media #{$break_large-up} { @content; }
+  }
+  @else if $media == xlarge {
+    @media #{$break_xlarge} { @content; }
+  }
+  @else if $media == xxlarge {
+    @media #{$break_xxlarge} { @content; }
+  }
+  @else {
+    @media only screen and ($media) { @content; }
+  }
+}
+
+// grid mixins
+
+$basefontsize: 16;
+$basepadd: 15;
+$baselineheight: 24;
+
+@mixin font($fontsize: 16, $lineheight: 24) {
+  font-size: $fontsize + px;
+  font-size: ($fontsize / $basefontsize) + rem;
+  line-height: ($lineheight / $fontsize);
+}
+
+@mixin height($rows) {
+  min-height: ($rows * $baselineheight) + px;
+  min-height: (($rows * $baselineheight) / $basefontsize) + rem;
+}
+
+@mixin padd-all($px) {
+  padding: $px + px;
+  padding: ($px / $basefontsize) + rem;
+}
+
+@mixin margin-all($px) {
+  margin: $px + px;
+  margin: ($px / $basefontsize) + rem;
+}
+
+@mixin margin($top: 0, $right: 0, $bottom: 0, $left: 0) {
+  margin: (($baselineheight * $top) + px) (($basepadd * $right) + px) (($baselineheight * $bottom) + px) (($basepadd * $left) + px);
+  margin: ((($baselineheight * $top) / $basefontsize) + rem) ((($basepadd * $right) / $basefontsize) + rem) ((($baselineheight * $bottom) / $basefontsize) + rem) ((($basepadd * $left) / $basefontsize) + rem);
+}
+
+@mixin padding($top: 0, $right: 0, $bottom: 0, $left: 0) {
+  padding: (($baselineheight * $top) + px) (($basepadd * $right) + px) (($baselineheight * $bottom) + px) (($basepadd * $left) + px);
+  padding: ((($baselineheight * $top) / $basefontsize) + rem) ((($basepadd * $right) / $basefontsize) + rem) ((($baselineheight * $bottom) / $basefontsize) + rem) ((($basepadd * $left) / $basefontsize) + rem) ;
+}
+
+@mixin drop-shadow($color, $fade) {
+  -webkit-box-shadow: 2px 2px 2px 0 fade-out($color, $fade);
+  box-shadow: 2px 2px 2px 0 fade-out($color, $fade);
+}
+
+// fonts 
+/*
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,800,700,600,300);
+
+$main-font: 'Open Sans', sans-serif;
+$body-font-family: $main-font;
+*/
+// colors
+$primary: #31557f;
+$font-color: darken($primary, 49.033%); // should be: #321a0c
+
+// foundation modifiers
+$body-font-color: $font-color;
+$header-font-color: lighten($font-color, 14.3%);
+$primary-color: $primary;
+
+//usage: @include breakpoint(small) {  css here }
+
+$topbar-breakpoint: 9999px; // Change to 9999px for always mobile layout
+$topbar-media-query: "only screen and (min-width: #{$topbar-breakpoint})";
