@@ -127,17 +127,19 @@ function smart_img( $src = '', $args = '' ){
 			break;
 	}
 
-	if( !$placeholder ){
+	if( !$type == 'placeholder' ){
 		if( $resize ){
 			$image_url = matthewruddy_image_resize( $image_url, $width, $height, $crop, $retina );
 			$image_url = $image_url['url'];
 		}
 	}
 	if( !$image_url ){
-		$image_url = get_stylesheet_directory_uri() . '/images/' . $fallback;
-		if( $resize ){
-			$image_url = matthewruddy_image_resize( $image_url, $width, $height, $crop, $retina );
-			$image_url = $image_url['url'];
+		if($fallback){
+			$image_url = get_stylesheet_directory_uri() . '/images/' . $fallback;
+			if( $resize ){
+				$image_url = matthewruddy_image_resize( $image_url, $width, $height, $crop, $retina );
+				$image_url = $image_url['url'];
+			}
 		}
 	}
 
@@ -177,6 +179,8 @@ function smart_img( $src = '', $args = '' ){
 	}
 
 	if( $return == 'src' ) $image_return = $image_url;
+
+	if(!$image_url) $image_return = '';
 	
 	if( $echo ) {
 		echo $image_return;
