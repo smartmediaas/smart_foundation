@@ -127,10 +127,14 @@ function smart_img( $src = '', $args = '' ){
 			break;
 	}
 
-	if( !$type == 'placeholder' ){
+	if( $type != 'placeholder' ){
 		if( $resize ){
 			$image_url = matthewruddy_image_resize( $image_url, $width, $height, $crop, $retina );
-			$image_url = $image_url['url'];
+			if(is_array($image_url)) {
+				$image_url = $image_url['url'];
+			}else{
+				$image_url = false;
+			}
 		}
 	}
 	if( !$image_url ){
